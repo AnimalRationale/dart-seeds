@@ -8,6 +8,7 @@ import 'dart:html';
 import 'dart:math';
 
 const String ORANGE = "orange";
+const String WHITE = "white";
 const int SEED_RADIUS = 6;
 const int SCALE_FACTOR = 4;
 const num TAU = PI * 2;
@@ -43,9 +44,9 @@ void draw() {
 /// Draw a small circle representing a seed centered at (x,y).
 void drawSeed(num x, num y) {
   context..beginPath()
-         ..lineWidth = 2
+         ..lineWidth = 1
          ..fillStyle = ORANGE
-         ..strokeStyle = ORANGE
+         ..strokeStyle = WHITE
          ..arc(x, y, SEED_RADIUS, 0, TAU, false)
          ..fill()
          ..closePath()
