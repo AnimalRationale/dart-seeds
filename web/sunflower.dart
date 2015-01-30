@@ -8,7 +8,7 @@ import 'dart:html';
 import 'dart:math';
 
 const String ORANGE = "orange";
-const int SEED_RADIUS = 2;
+const int SEED_RADIUS = 6;
 const int SCALE_FACTOR = 4;
 const num TAU = PI * 2;
 const int MAX_D = 300;
@@ -19,11 +19,12 @@ final InputElement slider = querySelector("#slider");
 final Element notes = querySelector("#notes");
 final num PHI = (sqrt(5) + 1) / 2;
 int seeds = 0;
+
 final CanvasRenderingContext2D context =
   (querySelector("#canvas") as CanvasElement).context2D;
 
 void main() {
-  slider.onChange.listen((e) => draw());
+  slider.onInput.listen((e) => draw());
   draw();
 }
 
