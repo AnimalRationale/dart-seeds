@@ -9,10 +9,11 @@ import 'dart:math';
 
 const String ORANGE = "orange";
 const String WHITE = "white";
-const int SEED_RADIUS = 6;
+const String BLACK = "black";
+const int SEED_RADIUS = 4;
 const int SCALE_FACTOR = 4;
 const num TAU = PI * 2;
-const int MAX_D = 300;
+const int MAX_D = 500;
 const num centerX = MAX_D / 2;
 const num centerY = centerX;
 
@@ -45,8 +46,8 @@ void draw() {
 void drawSeed(num x, num y) {
   context..beginPath()
          ..lineWidth = 1
-         ..fillStyle = ORANGE
-         ..strokeStyle = WHITE
+         ..fillStyle = WHITE
+         ..strokeStyle = BLACK
          ..arc(x, y, SEED_RADIUS, 0, TAU, false)
          ..fill()
          ..closePath()
