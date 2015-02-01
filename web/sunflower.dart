@@ -20,6 +20,8 @@ const num centerY = centerX;
 final InputElement slider = querySelector("#slider");
 final Element notes = querySelector("#notes");
 final num PHI = (sqrt(5) + 1) / 2;
+int width = MAX_D;
+int height = MAX_D;
 int seeds = 0;
 
 final CanvasRenderingContext2D context =
@@ -33,7 +35,7 @@ void main() {
 /// Draw the complete figure for the current number of seeds.
 void draw() {
   seeds = int.parse(slider.value);
-  context.clearRect(0, 0, MAX_D, MAX_D);
+  context.clearRect(0, 0, width, height);
   for (var i = 0; i < seeds; i++) {
     final num theta = i * TAU / PHI;
     final num r = sqrt(i) * SCALE_FACTOR;
