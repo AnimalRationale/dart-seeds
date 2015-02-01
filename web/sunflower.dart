@@ -13,21 +13,25 @@ const String BLACK = "black";
 const int SEED_RADIUS = 4;
 const int SCALE_FACTOR = 4;
 const num TAU = PI * 2;
-const int MAX_D = 500;
-const num centerX = MAX_D / 2;
-const num centerY = centerX;
+
+num centerX = window.innerWidth / 2;
+num centerY = window.innerHeight / 2;
 
 final InputElement slider = querySelector("#slider");
 final Element notes = querySelector("#notes");
 final num PHI = (sqrt(5) + 1) / 2;
-int width = MAX_D;
-int height = MAX_D;
+int width =  window.innerWidth;
+int height =  window.innerHeight;
 int seeds = 0;
+
+final CanvasElement canvas = querySelector("#canvas");
 
 final CanvasRenderingContext2D context =
   (querySelector("#canvas") as CanvasElement).context2D;
 
 void main() {
+  canvas.width = width;
+  canvas.height = height;
   slider.onInput.listen((e) => draw());
   draw();
 }

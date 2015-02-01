@@ -40,6 +40,11 @@ img {
   margin: auto;
 }
 
+#canvas {
+  width = 700;
+  height = 700;
+}
+
 .center {
   display: block;
   margin: 0px auto;
