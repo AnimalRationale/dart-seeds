@@ -39,7 +39,7 @@ void draw() {
     final num r = sqrt(i) * SCALE_FACTOR;
     drawSeed(centerX + r * cos(theta), centerY - r * sin(theta));
   }
-  notes.text = "${seeds} seeds";
+  notes.text = "${seeds} seeds.";
 }
 
 /// Draw a small circle representing a seed centered at (x,y).
