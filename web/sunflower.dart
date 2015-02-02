@@ -32,6 +32,10 @@ final CanvasRenderingContext2D context =
 void main() {
   canvas.width = width;
   canvas.height = height;
+  window.onResize.listen((_) {
+       resize();
+       draw();
+     });
   slider.onInput.listen((e) => draw());
   draw();
 }
@@ -59,3 +63,11 @@ void drawSeed(num x, num y) {
          ..closePath()
          ..stroke();
 }
+
+void resize() {
+    if (window.innerWidth == 0)
+      return;
+    context.clearRect(0, 0, width, height);
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
