@@ -70,4 +70,6 @@ void resize() {
     context.clearRect(0, 0, width, height);
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+    centerX = window.innerWidth / 2;
+    centerY = window.innerHeight / 2;
   }
