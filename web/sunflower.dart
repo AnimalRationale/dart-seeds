@@ -41,8 +41,10 @@ void main() {
 }
 
 /// Draw the complete figure for the current number of seeds.
-void draw() {
-  seeds = int.parse(slider.value);
+void draw([int seedsCount]) {
+  if (seedsCount == null)
+    {seeds = int.parse(slider.value);}
+    else {seeds = seedsCount;}
   context.clearRect(0, 0, width, height);
   for (var i = 0; i < seeds; i++) {
     final num theta = i * TAU / PHI;
@@ -72,6 +74,6 @@ void resize() {
     height = window.innerHeight;
     canvas.width = width;
     canvas.height = height;
-    centerX = window.innerWidth / 2;
-    centerY = window.innerHeight / 2;
+    centerX = width / 2;
+    centerY = height / 2;
   }
