@@ -68,8 +68,10 @@ void resize() {
     if (window.innerWidth == 0)
       return;
     context.clearRect(0, 0, width, height);
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    width = window.innerWidth;
+    height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
     centerX = window.innerWidth / 2;
     centerY = window.innerHeight / 2;
   }
