@@ -29,6 +29,7 @@ final num PHI = (sqrt(5) + 1) / 2;
 int width =  window.innerWidth;
 int height =  window.innerHeight;
 int seeds = 0;
+int prevWidth = width;
 
 final CanvasElement canvas = querySelector("#canvas");
 
@@ -73,6 +74,7 @@ void drawSeed(num x, num y) {
 }
 
 void resize() {
+    int seedsScale = 0;
     if (window.innerWidth == 0)
       return;
     context.clearRect(0, 0, width, height);
@@ -82,4 +84,7 @@ void resize() {
     canvas.height = height;
     centerX = width / 2;
     centerY = height / 2;
+    seedsScale = ((seeds * width) / prevWidth).round();
+    prevWidth = width;
+    slider.value = seedsScale.toString();
   }
